@@ -34,6 +34,8 @@
             expandtab = true;
             shiftwidth = 2;
             tabstop = 2;
+            relativenumber = true;
+            number = true; # absolute number on current line, relative elsewhere
           };
 
           globals.mapleader = " ";
@@ -42,15 +44,17 @@
           telescope.enable = true;
           autocomplete.nvim-cmp.enable = true;
           filetree.neo-tree.enable = true;
-          binds.whichKey.enable = true;
+          binds.whichKey.enable = true; # popup showing available keybindings after a prefix key
           git.gitsigns.enable = true;
-          visuals.indent-blankline.enable = true;
+          visuals.indent-blankline.enable = true; # vertical guide lines at each indent level
           dashboard.dashboard-nvim.enable = true;
           autopairs.nvim-autopairs.enable = true;
 
+          spellcheck.enable = true; # English by default, auto-enabled on prose filetypes
+
           languages = {
-            enableTreesitter = true;
-            enableFormat = true;
+            enableTreesitter = true; # syntax highlighting and code structure for all languages below
+            enableFormat = true; # enable formatters for all languages below
 
             nix.enable = true;
             markdown.enable = true;
@@ -58,17 +62,25 @@
             lua.enable = true;
             yaml.enable = true;
             toml.enable = true;
+            typst.enable = true; # includes tinymist LSP and typst-preview-nvim
+            python.enable = true; # basedpyright LSP + ruff formatter
+            tex.enable = true; # texlab LSP + latexmk formatter
           };
 
           lsp = {
             enable = true;
             formatOnSave = true;
+            trouble.enable = true; # structured diagnostics/references panel (:Trouble)
           };
+
+          utility.surround.enable = true; # add/change/delete surroundings: ys, cs, ds
+
+          navigation.harpoon.enable = true; # pin files for instant jump (<leader>a to mark, <C-e> to browse)
 
           extraPlugins = with pkgs.vimPlugins; {
             "guess-indent" = {
               package = guess-indent-nvim;
-              setup = "require('guess-indent').setup {}";
+              setup = "require('guess-indent').setup {}"; # detects and applies existing file indentation style
             };
           };
         };
