@@ -47,7 +47,6 @@
           binds.whichKey.enable = true; # popup showing available keybindings after a prefix key
           git.gitsigns.enable = true;
           visuals.indent-blankline.enable = true; # vertical guide lines at each indent level
-          dashboard.dashboard-nvim.enable = true;
           autopairs.nvim-autopairs.enable = true;
 
           spellcheck.enable = true; # English by default, auto-enabled on prose filetypes
