@@ -49,7 +49,11 @@
           visuals.indent-blankline.enable = true; # vertical guide lines at each indent level
           autopairs.nvim-autopairs.enable = true;
 
-          spellcheck.enable = true; # English by default, auto-enabled on prose filetypes
+          spellcheck = {
+            enable = true;
+            ignoreTerminal = true;
+            programmingWordlist.enable = true;
+          };
 
           languages = {
             enableTreesitter = true; # syntax highlighting and code structure for all languages below
@@ -75,6 +79,8 @@
           utility.surround.enable = true; # add/change/delete surroundings: ys, cs, ds
 
           navigation.harpoon.enable = true; # pin files for instant jump (<leader>a to mark, <C-e> to browse)
+
+          minimap.codewindow.enable = true;
 
           extraPlugins = with pkgs.vimPlugins; {
             "guess-indent" = {
