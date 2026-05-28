@@ -80,7 +80,9 @@
 
           navigation.harpoon.enable = true; # pin files for instant jump (<leader>a to mark, <C-e> to browse)
 
-          minimap.codewindow.enable = true;
+          # codewindow requires nvim-treesitter.ts_utils at setup time, before
+          # treesitter is loaded via lz.n, causing an init error.
+          # minimap.codewindow.enable = true;
 
           extraPlugins = with pkgs.vimPlugins; {
             "guess-indent" = {
