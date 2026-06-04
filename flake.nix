@@ -89,6 +89,10 @@
               package = guess-indent-nvim;
               setup = "require('guess-indent').setup {}"; # detects and applies existing file indentation style
             };
+            "smear-cursor" = {
+              package = smear-cursor-nvim;
+              setup = "require('smear_cursor').setup {}";
+            };
           };
         };
       };
