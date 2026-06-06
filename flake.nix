@@ -52,7 +52,6 @@
           spellcheck = {
             enable = true;
             ignoreTerminal = true;
-            programmingWordlist.enable = true;
           };
 
           languages = {
