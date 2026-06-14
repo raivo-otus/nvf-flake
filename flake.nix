@@ -73,6 +73,10 @@
             enable = true;
             formatOnSave = true;
             trouble.enable = true; # structured diagnostics/references panel (:Trouble)
+
+            # nil (the default Nix LSP) asks to fetch missing flake inputs on every
+            # launch unless autoArchive is set; true makes it fetch silently instead.
+            servers.nil.settings.nil.nix.flake.autoArchive = true;
           };
 
           utility.surround.enable = true; # add/change/delete surroundings: ys, cs, ds
