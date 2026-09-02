@@ -71,7 +71,7 @@
 
           lsp = {
             enable = true;
-            formatOnSave = true;
+            formatOnSave = false;
             trouble.enable = true; # structured diagnostics/references panel (:Trouble)
 
             # nil (the default Nix LSP) asks to fetch missing flake inputs on every
